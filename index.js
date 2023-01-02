@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
+import { createServer } from 'http';
+const server = createServer(app);
+import { Server } from "socket.io";
 const io = new Server(server);
 
 let users = [];
