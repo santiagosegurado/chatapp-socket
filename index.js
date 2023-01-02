@@ -4,6 +4,8 @@ import { createServer } from 'http';
 const server = createServer(app);
 import { Server } from "socket.io";
 const io = new Server(server);
+import * as dotenv from "dotenv";
+dotenv.config();
 
 let users = [];
 
@@ -48,6 +50,6 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+server.listen( process.env.PORT || 3000, () => {
+  console.log('listening on *: ' + process.env.PORT || 3001);
 });
