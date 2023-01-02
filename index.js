@@ -50,6 +50,6 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen( 6843, () => {
-  console.log('listening on *: ' + 6843);
+server.listen( process.env.PORT || 3001, () => {
+  console.log('listening on *: ' + process.env.PORT || 3001);
 });
